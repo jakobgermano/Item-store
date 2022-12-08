@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-    include ActionController::Cookies
+    
+include ActionController::Cookies
 rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_error
 
 before_action :authorize

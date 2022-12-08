@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
- resources :items, only: [:index] 
- resources :users, only: [:index]
+ resources :items 
+ resources :users
+
+ post '/login', to: 'sessions#create'
+ delete '/logout', to: 'sessions#destroy'
+ get '/me', to: 'users#show'
 
 
 
